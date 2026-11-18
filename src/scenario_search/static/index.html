@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Driving Scenario Search</title>
+<style>
+  :root { --bg:#0f1115; --panel:#171a21; --line:#272b35; --text:#e6e8ee; --muted:#9aa1b2; --accent:#4f8cff; --ok:#3ecf8e; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); }
+  header { padding:20px 28px 8px; }
+  h1 { font-size:20px; margin:0 0 4px; }
+  .sub { color:var(--muted); }
+  form { display:flex; gap:8px; padding:12px 28px; flex-wrap:wrap; }
+  input[type=text] { flex:1; min-width:280px; padding:10px 12px; border-radius:8px; border:1px solid var(--line); background:var(--panel); color:var(--text); font-size:15px; }
+  select, button { padding:10px 12px; border-radius:8px; border:1px solid var(--line); background:var(--panel); color:var(--text); }
+  button.primary { background:var(--accent); border-color:var(--accent); color:white; cursor:pointer; }
+  .chips { padding:0 28px; display:flex; gap:6px; flex-wrap:wrap; }
+  .chip { padding:4px 10px; border-radius:999px; border:1px solid var(--line); color:var(--muted); cursor:pointer; font-size:12px; }
+  .chip:hover { color:var(--text); border-color:var(--accent); }
+  #parsed { padding:10px 28px; color:var(--muted); font-size:13px; }
+  .tag { display:inline-block; padding:2px 8px; margin:2px; border-radius:6px; background:#1f2a40; color:#bcd0ff; font-size:12px; }
+  .tag.neg { background:#3a1f25; color:#ffbcc6; }
+  main { display:grid; grid-template-columns: minmax(0,1fr) 420px; gap:16px; padding:8px 28px 28px; }
+  #results { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap:12px; align-content:start; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden; cursor:pointer; }
+  .card:hover { border-color:var(--accent); }
+  .card img, .noimg { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#222; }
+  .noimg { display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:12px; }
+  .card .body { padding:10px; }
+  .card .title { display:flex; justify-content:space-between; font-weight:600; }
+  .card .cap { color:var(--muted); font-size:12px; margin-top:4px; }
+  .bar { height:4px; background:#232733; border-radius:2px; margin:6px 0; }
+  .bar > div { height:100%; background:var(--ok); border-radius:2px; }
+  #detail { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:14px; position:sticky; top:12px; align-self:start; max-height:calc(100vh - 24px); overflow:auto; }
+  #detail h2 { font-size:16px; margin:0 0 6px; }
+  #detail table { width:100%; font-size:12px; border-collapse:collapse; }
+  #detail td { padding:2px 4px; border-bottom:1px solid var(--line); }
+  .muted { color:var(--muted); }
+  a { color:var(--accent); }
+  .sim { font-size:12px; padding:6px 0; border-bottom:1px solid var(--line); cursor:pointer; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Driving Scenario Search</h1>
+  <div class="sub">Natural-language search over 850 real nuScenes drives (Boston + Singapore), using ego motion, CAN bus, HD map, 3D annotations and CLIP over camera frames.</div>
+</header>
+<form id="f">
+  <input id="q" type="text" placeholder="e.g. unprotected left turn at night with pedestrians crossing" autofocus>
+  <select id="mode">
+    <option value="hybrid">hybrid</option><option value="structured">structured only</option>
+    <option value="clip">CLIP only</option><option value="caption">caption only</option>
+  </select>
+  <select id="loc"><option value="">all cities</option><option value="boston">Boston</option><option value="singapore">Singapore</option></select>
+  <button class="primary">Search</button>
+</form>
+<div class="chips" id="chips"></div>
+<div id="parsed"></div>
+<main>
+  <section id="results"></section>
+  <aside id="detail"><span class="muted">Select a scenario to see its ego trajectory, tags and similar scenarios.</span></aside>
+</main>
+<script>
+const EXAMPLES = ["unprotected left turn with oncoming traffic", "jaywalker at night", "waiting at a red light in the rain",
+  "construction zone with cones and workers", "cyclist while turning right", "at least 20 pedestrians", "lane change in dense traffic",
+  "driving over a bridge", "left turn without any pedestrians", "faster than 50 km/h"];
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+$("#chips").innerHTML = EXAMPLES.map(e => `<span class="chip">${esc(e)}</span>`).join("");
+document.querySelectorAll(".chip").forEach(c => c.onclick = () => { $("#q").value = c.textContent; run(); });
+$("#f").onsubmit = e => { e.preventDefault(); run(); };
+
+async function run() {
+  const q = $("#q").value.trim(); if (!q) return;
+  const p = new URLSearchParams({q, mode: $("#mode").value, k: 24});
+  if ($("#loc").value) p.set("location", $("#loc").value);
+  const r = await (await fetch("/api/search?" + p)).json();
+  const pr = r.parsed;
+  $("#parsed").innerHTML = `Parsed: ${pr.tags.map(t => `<span class="tag ${t.startsWith("NOT") ? "neg" : ""}">${esc(t)}</span>`).join("")}
+    ${pr.filters.map(t => `<span class="tag">${esc(t)}</span>`).join("")}
+    ${pr.residual ? `<span class="muted">open-vocabulary: "${esc(pr.residual)}"</span>` : ""}
+    <span class="muted"> · ${r.latency_ms} ms</span>`;
+  $("#results").innerHTML = r.results.map(x => `
+    <div class="card" data-scene="${esc(x.scene)}">
+      ${x.frame ? `<img loading="lazy" src="/frames/${esc(x.frame.file)}" onerror="this.outerHTML='<div class=noimg>frame not downloaded</div>'">` : `<div class="noimg">no frame</div>`}
+      <div class="body">
+        <div class="title"><span>${esc(x.scene)}</span><span class="muted">${x.score.toFixed(3)}</span></div>
+        <div class="bar"><div style="width:${Math.round(100 * x.score)}%"></div></div>
+        <div class="muted" style="font-size:12px">${esc(x.location)}${x.frame ? ` · frame @ ${x.frame.t.toFixed(1)} s` : ""}</div>
+        <div class="cap">${esc(x.caption)}</div>
+      </div>
+    </div>`).join("");
+  document.querySelectorAll(".card").forEach(c => c.onclick = () => detail(c.dataset.scene));
+}
+
+function trackSvg(tr, spans) {
+  const xs = tr.xy.map(p => p[0]), ys = tr.xy.map(p => p[1]);
+  const pad = 8, W = 380, H = 220;
+  const minx = Math.min(...xs), maxx = Math.max(...xs), miny = Math.min(...ys), maxy = Math.max(...ys);
+  const s = Math.min((W - 2 * pad) / Math.max(1, maxx - minx), (H - 2 * pad) / Math.max(1, maxy - miny));
+  // ego frame: x forward -> screen up, y left -> screen left
+  const P = (x, y) => [W / 2 - (y - (miny + maxy) / 2) * s, H / 2 - (x - (minx + maxx) / 2) * s];
+  const vmax = Math.max(1, ...tr.speed_kmh);
+  let segs = "";
+  for (let i = 1; i < tr.xy.length; i++) {
+    const [a, b] = P(...tr.xy[i - 1]), [c, d] = P(...tr.xy[i]);
+    const v = tr.speed_kmh[i] / vmax, col = `hsl(${120 * v},70%,55%)`;
+    segs += `<line x1="${a}" y1="${b}" x2="${c}" y2="${d}" stroke="${col}" stroke-width="3" stroke-linecap="round"/>`;
+  }
+  const [sx, sy] = P(...tr.xy[0]);
+  return `<svg width="${W}" height="${H}" style="background:#11141a;border-radius:8px">${segs}
+    <circle cx="${sx}" cy="${sy}" r="4" fill="white"/></svg>
+    <div class="muted" style="font-size:11px">Ego path in the starting ego frame (white dot = start, up = initial heading). Colour = speed, red slow / green fast (max ${vmax.toFixed(0)} km/h).</div>`;
+}
+
+async function detail(name) {
+  const s = await (await fetch("/api/scenario/" + name)).json();
+  const sim = await (await fetch("/api/similar/" + name + "?k=6")).json();
+  const m = s.measures;
+  const rows = [["max speed", m.max_speed_kmh + " km/h"], ["turn left / right", m.turn_left_deg + "° / " + m.turn_right_deg + "°"],
+    ["longest stop", m.longest_stop_s + " s"], ["pedestrians (30 m)", m.n_peds], ["crossing in front", m.n_peds_crossing],
+    ["vehicles (30 m)", m.n_vehicles], ["sun elevation", m.sun_elevation_deg + "°"]];
+  $("#detail").innerHTML = `<h2>${esc(s.scene)} <span class="muted" style="font-size:12px">${esc(s.location)} · ${esc(s.date)}</span></h2>
+    <div style="margin-bottom:8px">${esc(s.caption)}</div>
+    ${trackSvg(s.track, s.spans)}
+    <div style="margin:8px 0">${Object.entries(s.tags).map(([t, v]) => `<span class="tag">${esc(t)} ${v.toFixed(2)}</span>`).join("")}</div>
+    <table>${rows.map(r => `<tr><td class="muted">${r[0]}</td><td>${esc(r[1])}</td></tr>`).join("")}</table>
+    <p><a href="/api/export/${esc(s.scene)}.xosc">Export as OpenSCENARIO 1.2 log replay</a></p>
+    <h2 style="margin-top:12px">Similar scenarios</h2>
+    ${sim.map(x => `<div class="sim" data-scene="${esc(x.scene)}"><b>${esc(x.scene)}</b> <span class="muted">${x.score.toFixed(2)}</span><br><span class="muted">${esc(x.caption)}</span></div>`).join("")}`;
+  document.querySelectorAll(".sim").forEach(c => c.onclick = () => detail(c.dataset.scene));
+}
+</script>
+</body>
+</html>

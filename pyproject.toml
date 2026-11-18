@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "driving-scenario-search"
+version = "0.1.0"
+description = "Natural-language and example-based search over real driving scenarios (nuScenes), with held-out retrieval evaluation."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "shapely>=2.0",
+  "fastapi>=0.110",
+  "uvicorn>=0.29",
+  "pydantic>=2",
+]
+
+[project.optional-dependencies]
+ml = ["torch>=2.2", "transformers>=4.40", "pillow>=10", "scikit-learn>=1.4"]
+dev = ["pytest>=8", "httpx>=0.27", "ruff==0.8.4", "lxml>=5", "scenariogeneration>=0.14", "scikit-learn>=1.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+scenario_search = ["static/*.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["B905"]

@@ -1,0 +1,3213 @@
+{
+ "protocol": {
+  "dev_scenes": 449,
+  "test_scenes": 401,
+  "dev_days": 15,
+  "test_days": 13,
+  "min_test_positives": 5,
+  "weights": {
+   "structured": 0.8,
+   "clip": 0.5
+  },
+  "n_clip_frames": 8747
+ },
+ "summary": {
+  "random": {
+   "single": {
+    "AP": 0.1197,
+    "nDCG@10": 0.1055,
+    "P@10": 0.1048,
+    "n_queries": 31
+   },
+   "compositional": {
+    "AP": 0.1013,
+    "nDCG@10": 0.0878,
+    "P@10": 0.086,
+    "n_queries": 13
+   },
+   "all": {
+    "AP": 0.1143,
+    "nDCG@10": 0.1003,
+    "P@10": 0.0992,
+    "n_queries": 44
+   }
+  },
+  "zero-shot caption": {
+   "single": {
+    "AP": 0.2401,
+    "nDCG@10": 0.2995,
+    "P@10": 0.2935,
+    "n_queries": 31
+   },
+   "compositional": {
+    "AP": 0.2584,
+    "nDCG@10": 0.2689,
+    "P@10": 0.2846,
+    "n_queries": 13
+   },
+   "all": {
+    "AP": 0.2455,
+    "nDCG@10": 0.2905,
+    "P@10": 0.2909,
+    "n_queries": 44
+   }
+  },
+  "zero-shot structured": {
+   "single": {
+    "AP": 0.3617,
+    "nDCG@10": 0.3666,
+    "P@10": 0.3774,
+    "n_queries": 31
+   },
+   "compositional": {
+    "AP": 0.4376,
+    "nDCG@10": 0.4379,
+    "P@10": 0.4308,
+    "n_queries": 13
+   },
+   "all": {
+    "AP": 0.3841,
+    "nDCG@10": 0.3877,
+    "P@10": 0.3932,
+    "n_queries": 44
+   }
+  },
+  "zero-shot hybrid": {
+   "single": {
+    "AP": 0.3876,
+    "nDCG@10": 0.4632,
+    "P@10": 0.4565,
+    "n_queries": 31
+   },
+   "compositional": {
+    "AP": 0.4653,
+    "nDCG@10": 0.5251,
+    "P@10": 0.4692,
+    "n_queries": 13
+   },
+   "all": {
+    "AP": 0.4106,
+    "nDCG@10": 0.4815,
+    "P@10": 0.4602,
+    "n_queries": 44
+   }
+  },
+  "zero-shot clip": {
+   "single": {
+    "AP": 0.2339,
+    "nDCG@10": 0.312,
+    "P@10": 0.2968,
+    "n_queries": 31
+   },
+   "compositional": {
+    "AP": 0.2661,
+    "nDCG@10": 0.3564,
+    "P@10": 0.3462,
+    "n_queries": 13
+   },
+   "all": {
+    "AP": 0.2434,
+    "nDCG@10": 0.3251,
+    "P@10": 0.3114,
+    "n_queries": 44
+   }
+  },
+  "zero-shot open_vocab": {
+   "single": {
+    "AP": 0.2714,
+    "nDCG@10": 0.348,
+    "P@10": 0.3371,
+    "n_queries": 31
+   },
+   "compositional": {
+    "AP": 0.3367,
+    "nDCG@10": 0.3765,
+    "P@10": 0.3538,
+    "n_queries": 13
+   },
+   "all": {
+    "AP": 0.2907,
+    "nDCG@10": 0.3564,
+    "P@10": 0.342,
+    "n_queries": 44
+   }
+  },
+  "learned structured": {
+   "single": {
+    "AP": 0.3851,
+    "nDCG@10": 0.4859,
+    "P@10": 0.471,
+    "n_queries": 31
+   },
+   "compositional": {
+    "AP": 0.4507,
+    "nDCG@10": 0.5354,
+    "P@10": 0.4923,
+    "n_queries": 13
+   },
+   "all": {
+    "AP": 0.4044,
+    "nDCG@10": 0.5005,
+    "P@10": 0.4773,
+    "n_queries": 44
+   }
+  },
+  "learned hybrid": {
+   "single": {
+    "AP": 0.3952,
+    "nDCG@10": 0.4973,
+    "P@10": 0.4839,
+    "n_queries": 31
+   },
+   "compositional": {
+    "AP": 0.4574,
+    "nDCG@10": 0.5535,
+    "P@10": 0.5154,
+    "n_queries": 13
+   },
+   "all": {
+    "AP": 0.4136,
+    "nDCG@10": 0.5139,
+    "P@10": 0.4932,
+    "n_queries": 44
+   }
+  }
+ },
+ "per_query": {
+  "random": [
+   {
+    "group": "single",
+    "gt": "night",
+    "n_pos": 66,
+    "AP": 0.17645727395938082,
+    "nDCG@10": 0.16395796472246926,
+    "P@10": 0.16149999999999998
+   },
+   {
+    "group": "single",
+    "gt": "rain",
+    "n_pos": 17,
+    "AP": 0.05425731109170778,
+    "nDCG@10": 0.039378956859338676,
+    "P@10": 0.0425
+   },
+   {
+    "group": "single",
+    "gt": "parking_lot",
+    "n_pos": 95,
+    "AP": 0.2440874219835852,
+    "nDCG@10": 0.21184870666711603,
+    "P@10": 0.20650000000000002
+   },
+   {
+    "group": "single",
+    "gt": "wait_at_intersection",
+    "n_pos": 87,
+    "AP": 0.22559563152391796,
+    "nDCG@10": 0.20609566496148177,
+    "P@10": 0.201
+   },
+   {
+    "group": "single",
+    "gt": "turn_left",
+    "n_pos": 36,
+    "AP": 0.10347571583259031,
+    "nDCG@10": 0.08803945288488763,
+    "P@10": 0.0895
+   },
+   {
+    "group": "single",
+    "gt": "turn_right",
+    "n_pos": 55,
+    "AP": 0.15084264108212517,
+    "nDCG@10": 0.139084885039058,
+    "P@10": 0.139
+   },
+   {
+    "group": "single",
+    "gt": "cross_intersection",
+    "n_pos": 37,
+    "AP": 0.10319798773596751,
+    "nDCG@10": 0.07994001881229647,
+    "P@10": 0.08199999999999999
+   },
+   {
+    "group": "single",
+    "gt": "bus",
+    "n_pos": 85,
+    "AP": 0.2231845511967444,
+    "nDCG@10": 0.20127563618188724,
+    "P@10": 0.19950000000000004
+   },
+   {
+    "group": "single",
+    "gt": "truck",
+    "n_pos": 96,
+    "AP": 0.24968958751415848,
+    "nDCG@10": 0.25396238967734514,
+    "P@10": 0.254
+   },
+   {
+    "group": "single",
+    "gt": "construction_zone",
+    "n_pos": 64,
+    "AP": 0.17290134294099183,
+    "nDCG@10": 0.16661619925285642,
+    "P@10": 0.1635
+   },
+   {
+    "group": "single",
+    "gt": "cones",
+    "n_pos": 50,
+    "AP": 0.13599615355822062,
+    "nDCG@10": 0.12303234009107943,
+    "P@10": 0.1255
+   },
+   {
+    "group": "single",
+    "gt": "barriers",
+    "n_pos": 20,
+    "AP": 0.06138969702271373,
+    "nDCG@10": 0.041788204754242206,
+    "P@10": 0.0425
+   },
+   {
+    "group": "single",
+    "gt": "parked_cars",
+    "n_pos": 115,
+    "AP": 0.2965921959289799,
+    "nDCG@10": 0.28303191077066353,
+    "P@10": 0.2825
+   },
+   {
+    "group": "single",
+    "gt": "many_pedestrians",
+    "n_pos": 38,
+    "AP": 0.10820719168764725,
+    "nDCG@10": 0.09611449491636469,
+    "P@10": 0.094
+   },
+   {
+    "group": "single",
+    "gt": "ped_crossing",
+    "n_pos": 53,
+    "AP": 0.14283166898766747,
+    "nDCG@10": 0.12314733132595418,
+    "P@10": 0.12450000000000001
+   },
+   {
+    "group": "single",
+    "gt": "jaywalker",
+    "n_pos": 33,
+    "AP": 0.09462360963589334,
+    "nDCG@10": 0.08339992919034912,
+    "P@10": 0.083
+   },
+   {
+    "group": "single",
+    "gt": "cyclist",
+    "n_pos": 19,
+    "AP": 0.06376144206138848,
+    "nDCG@10": 0.05973224278554408,
+    "P@10": 0.053
+   },
+   {
+    "group": "single",
+    "gt": "parked_bicycles",
+    "n_pos": 66,
+    "AP": 0.1766214597512865,
+    "nDCG@10": 0.16432378072654752,
+    "P@10": 0.166
+   },
+   {
+    "group": "single",
+    "gt": "bicycle_rack",
+    "n_pos": 15,
+    "AP": 0.051082757517600934,
+    "nDCG@10": 0.03175944294156254,
+    "P@10": 0.03
+   },
+   {
+    "group": "single",
+    "gt": "motorcycle",
+    "n_pos": 60,
+    "AP": 0.16310194292244645,
+    "nDCG@10": 0.1543895537013684,
+    "P@10": 0.1505
+   },
+   {
+    "group": "single",
+    "gt": "motorcyclist",
+    "n_pos": 59,
+    "AP": 0.15880578998644077,
+    "nDCG@10": 0.1317171318596485,
+    "P@10": 0.134
+   },
+   {
+    "group": "single",
+    "gt": "bus_stop",
+    "n_pos": 22,
+    "AP": 0.0685369433047529,
+    "nDCG@10": 0.06235110006194102,
+    "P@10": 0.061500000000000006
+   },
+   {
+    "group": "single",
+    "gt": "dense_traffic",
+    "n_pos": 27,
+    "AP": 0.08088754383638051,
+    "nDCG@10": 0.07202736376674873,
+    "P@10": 0.07050000000000001
+   },
+   {
+    "group": "single",
+    "gt": "lane_change",
+    "n_pos": 12,
+    "AP": 0.042112286627352155,
+    "nDCG@10": 0.024026161457840544,
+    "P@10": 0.0245
+   },
+   {
+    "group": "single",
+    "gt": "overtaken",
+    "n_pos": 17,
+    "AP": 0.05525637958282287,
+    "nDCG@10": 0.04081332904244541,
+    "P@10": 0.0415
+   },
+   {
+    "group": "single",
+    "gt": "high_speed",
+    "n_pos": 11,
+    "AP": 0.038895902809331855,
+    "nDCG@10": 0.02252331891650767,
+    "P@10": 0.0245
+   },
+   {
+    "group": "single",
+    "gt": "bridge",
+    "n_pos": 13,
+    "AP": 0.04464147311486144,
+    "nDCG@10": 0.03178266041746827,
+    "P@10": 0.0325
+   },
+   {
+    "group": "single",
+    "gt": "nature",
+    "n_pos": 21,
+    "AP": 0.06576646687544965,
+    "nDCG@10": 0.05362317712332551,
+    "P@10": 0.055999999999999994
+   },
+   {
+    "group": "single",
+    "gt": "construction_vehicle",
+    "n_pos": 29,
+    "AP": 0.08559901872862564,
+    "nDCG@10": 0.07390534443301747,
+    "P@10": 0.07200000000000001
+   },
+   {
+    "group": "single",
+    "gt": "trailer",
+    "n_pos": 9,
+    "AP": 0.03461598534680263,
+    "nDCG@10": 0.019483695469957603,
+    "P@10": 0.017
+   },
+   {
+    "group": "single",
+    "gt": "animal",
+    "n_pos": 9,
+    "AP": 0.03916246670936485,
+    "nDCG@10": 0.028606576358263122,
+    "P@10": 0.0245
+   },
+   {
+    "group": "compositional",
+    "gt": "night+rain",
+    "n_pos": 16,
+    "AP": 0.052989133195108916,
+    "nDCG@10": 0.03844205550723226,
+    "P@10": 0.038
+   },
+   {
+    "group": "compositional",
+    "gt": "night+turn_left",
+    "n_pos": 6,
+    "AP": 0.0298578746771556,
+    "nDCG@10": 0.023651668755128242,
+    "P@10": 0.016
+   },
+   {
+    "group": "compositional",
+    "gt": "night+turn_right",
+    "n_pos": 10,
+    "AP": 0.036914961670702066,
+    "nDCG@10": 0.02014462496306666,
+    "P@10": 0.021500000000000005
+   },
+   {
+    "group": "compositional",
+    "gt": "night+pedestrians",
+    "n_pos": 30,
+    "AP": 0.0872039277934051,
+    "nDCG@10": 0.07649007048345441,
+    "P@10": 0.075
+   },
+   {
+    "group": "compositional",
+    "gt": "turn_left+pedestrians",
+    "n_pos": 24,
+    "AP": 0.07298041706023442,
+    "nDCG@10": 0.055774413805519486,
+    "P@10": 0.056999999999999995
+   },
+   {
+    "group": "compositional",
+    "gt": "turn_right+pedestrians",
+    "n_pos": 43,
+    "AP": 0.11921331402600925,
+    "nDCG@10": 0.10918389433025463,
+    "P@10": 0.10400000000000001
+   },
+   {
+    "group": "compositional",
+    "gt": "wait_at_intersection+pedestrians",
+    "n_pos": 64,
+    "AP": 0.1709702783685182,
+    "nDCG@10": 0.15850167376,
+    "P@10": 0.1585
+   },
+   {
+    "group": "compositional",
+    "gt": "wait_at_intersection+truck",
+    "n_pos": 23,
+    "AP": 0.06960001066788896,
+    "nDCG@10": 0.053842224336816076,
+    "P@10": 0.050499999999999996
+   },
+   {
+    "group": "compositional",
+    "gt": "parking_lot+pedestrians",
+    "n_pos": 74,
+    "AP": 0.19777546481500669,
+    "nDCG@10": 0.18529090624246586,
+    "P@10": 0.179
+   },
+   {
+    "group": "compositional",
+    "gt": "construction_zone+cones",
+    "n_pos": 12,
+    "AP": 0.04438125011682939,
+    "nDCG@10": 0.03198772417345606,
+    "P@10": 0.030999999999999996
+   },
+   {
+    "group": "compositional",
+    "gt": "bus+pedestrians",
+    "n_pos": 60,
+    "AP": 0.15918680869088647,
+    "nDCG@10": 0.14469783079982826,
+    "P@10": 0.14450000000000002
+   },
+   {
+    "group": "compositional",
+    "gt": "parked_cars+pedestrians",
+    "n_pos": 89,
+    "AP": 0.23136427421304617,
+    "nDCG@10": 0.2068534316690356,
+    "P@10": 0.21050000000000002
+   },
+   {
+    "group": "compositional",
+    "gt": "jaywalker+parked_cars",
+    "n_pos": 11,
+    "AP": 0.04471097384634607,
+    "nDCG@10": 0.03612733092280093,
+    "P@10": 0.032
+   }
+  ],
+  "zero-shot caption": [
+   {
+    "group": "single",
+    "gt": "night",
+    "n_pos": 66,
+    "AP": 0.4878078017540822,
+    "nDCG@10": 0.40725742149297206,
+    "P@10": 0.5
+   },
+   {
+    "group": "single",
+    "gt": "rain",
+    "n_pos": 17,
+    "AP": 0.03128370205182673,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "single",
+    "gt": "parking_lot",
+    "n_pos": 95,
+    "AP": 0.2738974283174289,
+    "nDCG@10": 0.2905410190557837,
+    "P@10": 0.3
+   },
+   {
+    "group": "single",
+    "gt": "wait_at_intersection",
+    "n_pos": 87,
+    "AP": 0.49160020371415425,
+    "nDCG@10": 0.6933243695005504,
+    "P@10": 0.65
+   },
+   {
+    "group": "single",
+    "gt": "turn_left",
+    "n_pos": 36,
+    "AP": 0.29282684188560665,
+    "nDCG@10": 0.45503937535907607,
+    "P@10": 0.5
+   },
+   {
+    "group": "single",
+    "gt": "turn_right",
+    "n_pos": 55,
+    "AP": 0.2618285055338564,
+    "nDCG@10": 0.23237284161246807,
+    "P@10": 0.3
+   },
+   {
+    "group": "single",
+    "gt": "cross_intersection",
+    "n_pos": 37,
+    "AP": 0.22146835516477642,
+    "nDCG@10": 0.4840134129857066,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "bus",
+    "n_pos": 85,
+    "AP": 0.47698252158651044,
+    "nDCG@10": 0.7531604819662918,
+    "P@10": 0.8
+   },
+   {
+    "group": "single",
+    "gt": "truck",
+    "n_pos": 96,
+    "AP": 0.3016028936557411,
+    "nDCG@10": 0.3300792533881373,
+    "P@10": 0.30000000000000004
+   },
+   {
+    "group": "single",
+    "gt": "construction_zone",
+    "n_pos": 64,
+    "AP": 0.3570096897891979,
+    "nDCG@10": 0.6113107474945452,
+    "P@10": 0.5
+   },
+   {
+    "group": "single",
+    "gt": "cones",
+    "n_pos": 50,
+    "AP": 0.2018199508025384,
+    "nDCG@10": 0.41617069029012344,
+    "P@10": 0.35
+   },
+   {
+    "group": "single",
+    "gt": "barriers",
+    "n_pos": 20,
+    "AP": 0.05100196491086546,
+    "nDCG@10": 0.03919913448933767,
+    "P@10": 0.05
+   },
+   {
+    "group": "single",
+    "gt": "parked_cars",
+    "n_pos": 115,
+    "AP": 0.3945009416881391,
+    "nDCG@10": 0.19921396727168098,
+    "P@10": 0.25
+   },
+   {
+    "group": "single",
+    "gt": "many_pedestrians",
+    "n_pos": 38,
+    "AP": 0.1486844376982883,
+    "nDCG@10": 0.31276575615696733,
+    "P@10": 0.30000000000000004
+   },
+   {
+    "group": "single",
+    "gt": "ped_crossing",
+    "n_pos": 53,
+    "AP": 0.28200104574148577,
+    "nDCG@10": 0.5844487217163838,
+    "P@10": 0.5
+   },
+   {
+    "group": "single",
+    "gt": "jaywalker",
+    "n_pos": 33,
+    "AP": 0.11153540370111714,
+    "nDCG@10": 0.08052129391196991,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "cyclist",
+    "n_pos": 19,
+    "AP": 0.19523857357524899,
+    "nDCG@10": 0.21441990451688325,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "parked_bicycles",
+    "n_pos": 66,
+    "AP": 0.2390933068453402,
+    "nDCG@10": 0.28698616973329827,
+    "P@10": 0.25
+   },
+   {
+    "group": "single",
+    "gt": "bicycle_rack",
+    "n_pos": 15,
+    "AP": 0.19684321637368335,
+    "nDCG@10": 0.1564917460734504,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "motorcycle",
+    "n_pos": 60,
+    "AP": 0.21984945853517346,
+    "nDCG@10": 0.38050676006136963,
+    "P@10": 0.35
+   },
+   {
+    "group": "single",
+    "gt": "motorcyclist",
+    "n_pos": 59,
+    "AP": 0.27422057187840915,
+    "nDCG@10": 0.24951336632536916,
+    "P@10": 0.30000000000000004
+   },
+   {
+    "group": "single",
+    "gt": "bus_stop",
+    "n_pos": 22,
+    "AP": 0.03650607017359277,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "single",
+    "gt": "dense_traffic",
+    "n_pos": 27,
+    "AP": 0.0780530916333817,
+    "nDCG@10": 0.07569867054800503,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "lane_change",
+    "n_pos": 12,
+    "AP": 0.1440086225303828,
+    "nDCG@10": 0.2571421257151138,
+    "P@10": 0.25
+   },
+   {
+    "group": "single",
+    "gt": "overtaken",
+    "n_pos": 17,
+    "AP": 0.11334731457103969,
+    "nDCG@10": 0.08052129391196992,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "high_speed",
+    "n_pos": 11,
+    "AP": 0.39542317872270555,
+    "nDCG@10": 0.3529527010201656,
+    "P@10": 0.3
+   },
+   {
+    "group": "single",
+    "gt": "bridge",
+    "n_pos": 13,
+    "AP": 0.13717576757992034,
+    "nDCG@10": 0.18733305293823926,
+    "P@10": 0.15000000000000002
+   },
+   {
+    "group": "single",
+    "gt": "nature",
+    "n_pos": 21,
+    "AP": 0.05878837275937592,
+    "nDCG@10": 0.03312711172719452,
+    "P@10": 0.05
+   },
+   {
+    "group": "single",
+    "gt": "construction_vehicle",
+    "n_pos": 29,
+    "AP": 0.12688017197147042,
+    "nDCG@10": 0.19546369210011086,
+    "P@10": 0.25
+   },
+   {
+    "group": "single",
+    "gt": "trailer",
+    "n_pos": 9,
+    "AP": 0.052970648471274764,
+    "nDCG@10": 0.09607831941563952,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "animal",
+    "n_pos": 9,
+    "AP": 0.7886926406926407,
+    "nDCG@10": 0.8302306325541746,
+    "P@10": 0.7
+   },
+   {
+    "group": "compositional",
+    "gt": "night+rain",
+    "n_pos": 16,
+    "AP": 0.18627710007970694,
+    "nDCG@10": 0.133052010135729,
+    "P@10": 0.2
+   },
+   {
+    "group": "compositional",
+    "gt": "night+turn_left",
+    "n_pos": 6,
+    "AP": 0.15259003342600572,
+    "nDCG@10": 0.1909208661789347,
+    "P@10": 0.1
+   },
+   {
+    "group": "compositional",
+    "gt": "night+turn_right",
+    "n_pos": 10,
+    "AP": 0.357377886863181,
+    "nDCG@10": 0.3128047789019752,
+    "P@10": 0.4
+   },
+   {
+    "group": "compositional",
+    "gt": "night+pedestrians",
+    "n_pos": 30,
+    "AP": 0.4926992245785045,
+    "nDCG@10": 0.5056427642465516,
+    "P@10": 0.6
+   },
+   {
+    "group": "compositional",
+    "gt": "turn_left+pedestrians",
+    "n_pos": 24,
+    "AP": 0.22169798030416255,
+    "nDCG@10": 0.38196033715832367,
+    "P@10": 0.4
+   },
+   {
+    "group": "compositional",
+    "gt": "turn_right+pedestrians",
+    "n_pos": 43,
+    "AP": 0.24460190678197116,
+    "nDCG@10": 0.13886244387355456,
+    "P@10": 0.1
+   },
+   {
+    "group": "compositional",
+    "gt": "wait_at_intersection+pedestrians",
+    "n_pos": 64,
+    "AP": 0.6049339430259307,
+    "nDCG@10": 1.0,
+    "P@10": 1.0
+   },
+   {
+    "group": "compositional",
+    "gt": "wait_at_intersection+truck",
+    "n_pos": 23,
+    "AP": 0.21456347938135342,
+    "nDCG@10": 0.06943122193677728,
+    "P@10": 0.1
+   },
+   {
+    "group": "compositional",
+    "gt": "parking_lot+pedestrians",
+    "n_pos": 74,
+    "AP": 0.22859404971632746,
+    "nDCG@10": 0.3052348839397012,
+    "P@10": 0.2
+   },
+   {
+    "group": "compositional",
+    "gt": "construction_zone+cones",
+    "n_pos": 12,
+    "AP": 0.09739406636981945,
+    "nDCG@10": 0.06362078819895173,
+    "P@10": 0.1
+   },
+   {
+    "group": "compositional",
+    "gt": "bus+pedestrians",
+    "n_pos": 60,
+    "AP": 0.2551718297513703,
+    "nDCG@10": 0.32776097292662437,
+    "P@10": 0.4
+   },
+   {
+    "group": "compositional",
+    "gt": "parked_cars+pedestrians",
+    "n_pos": 89,
+    "AP": 0.2536866892447595,
+    "nDCG@10": 0.06625422345438904,
+    "P@10": 0.1
+   },
+   {
+    "group": "compositional",
+    "gt": "jaywalker+parked_cars",
+    "n_pos": 11,
+    "AP": 0.04974248159547489,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   }
+  ],
+  "zero-shot structured": [
+   {
+    "group": "single",
+    "gt": "night",
+    "n_pos": 66,
+    "AP": 1.0,
+    "nDCG@10": 1.0,
+    "P@10": 1.0
+   },
+   {
+    "group": "single",
+    "gt": "rain",
+    "n_pos": 17,
+    "AP": 0.2759738743446968,
+    "nDCG@10": 0.39295814281507924,
+    "P@10": 0.35
+   },
+   {
+    "group": "single",
+    "gt": "parking_lot",
+    "n_pos": 95,
+    "AP": 0.3175578385548744,
+    "nDCG@10": 0.2465505554475862,
+    "P@10": 0.3
+   },
+   {
+    "group": "single",
+    "gt": "wait_at_intersection",
+    "n_pos": 87,
+    "AP": 0.362327926859378,
+    "nDCG@10": 0.20660270766154276,
+    "P@10": 0.25
+   },
+   {
+    "group": "single",
+    "gt": "turn_left",
+    "n_pos": 36,
+    "AP": 0.5745197039585089,
+    "nDCG@10": 0.66894312882716,
+    "P@10": 0.6499999999999999
+   },
+   {
+    "group": "single",
+    "gt": "turn_right",
+    "n_pos": 55,
+    "AP": 0.6141240151915992,
+    "nDCG@10": 0.45260163770065,
+    "P@10": 0.6
+   },
+   {
+    "group": "single",
+    "gt": "cross_intersection",
+    "n_pos": 37,
+    "AP": 0.09010748046605907,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "single",
+    "gt": "bus",
+    "n_pos": 85,
+    "AP": 0.5661771108476057,
+    "nDCG@10": 0.7380352509209214,
+    "P@10": 0.75
+   },
+   {
+    "group": "single",
+    "gt": "truck",
+    "n_pos": 96,
+    "AP": 0.47176503377264684,
+    "nDCG@10": 0.2883820513943218,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "construction_zone",
+    "n_pos": 64,
+    "AP": 0.6971531827217792,
+    "nDCG@10": 0.8061146145519256,
+    "P@10": 0.8500000000000001
+   },
+   {
+    "group": "single",
+    "gt": "cones",
+    "n_pos": 50,
+    "AP": 0.20631449977078922,
+    "nDCG@10": 0.08514311764162101,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "barriers",
+    "n_pos": 20,
+    "AP": 0.09808958034357823,
+    "nDCG@10": 0.14185627724851596,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "parked_cars",
+    "n_pos": 115,
+    "AP": 0.515860319544393,
+    "nDCG@10": 0.6772733739526912,
+    "P@10": 0.6
+   },
+   {
+    "group": "single",
+    "gt": "many_pedestrians",
+    "n_pos": 38,
+    "AP": 0.25426635546904963,
+    "nDCG@10": 0.2588097889896128,
+    "P@10": 0.3
+   },
+   {
+    "group": "single",
+    "gt": "ped_crossing",
+    "n_pos": 53,
+    "AP": 0.21197622699237614,
+    "nDCG@10": 0.14372381823460087,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "jaywalker",
+    "n_pos": 33,
+    "AP": 0.14954432859064892,
+    "nDCG@10": 0.1100458831490401,
+    "P@10": 0.05
+   },
+   {
+    "group": "single",
+    "gt": "cyclist",
+    "n_pos": 19,
+    "AP": 0.25666163026741096,
+    "nDCG@10": 0.2910428988279108,
+    "P@10": 0.35
+   },
+   {
+    "group": "single",
+    "gt": "parked_bicycles",
+    "n_pos": 66,
+    "AP": 0.31330613766352433,
+    "nDCG@10": 0.18821278355046347,
+    "P@10": 0.25
+   },
+   {
+    "group": "single",
+    "gt": "bicycle_rack",
+    "n_pos": 15,
+    "AP": 0.4119517729298527,
+    "nDCG@10": 0.3792377156012898,
+    "P@10": 0.5
+   },
+   {
+    "group": "single",
+    "gt": "motorcycle",
+    "n_pos": 60,
+    "AP": 0.36325095390336387,
+    "nDCG@10": 0.6473362615659566,
+    "P@10": 0.6
+   },
+   {
+    "group": "single",
+    "gt": "motorcyclist",
+    "n_pos": 59,
+    "AP": 0.439537931221638,
+    "nDCG@10": 0.45577863618303815,
+    "P@10": 0.5
+   },
+   {
+    "group": "single",
+    "gt": "bus_stop",
+    "n_pos": 22,
+    "AP": 0.16004036370717936,
+    "nDCG@10": 0.2895229882348575,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "dense_traffic",
+    "n_pos": 27,
+    "AP": 0.29731305625518306,
+    "nDCG@10": 0.5289638450374727,
+    "P@10": 0.5
+   },
+   {
+    "group": "single",
+    "gt": "lane_change",
+    "n_pos": 12,
+    "AP": 0.10392665778335916,
+    "nDCG@10": 0.10241712375929546,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "overtaken",
+    "n_pos": 17,
+    "AP": 0.182526982909238,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "single",
+    "gt": "high_speed",
+    "n_pos": 11,
+    "AP": 0.8862193362193362,
+    "nDCG@10": 0.8669479898642711,
+    "P@10": 0.8
+   },
+   {
+    "group": "single",
+    "gt": "bridge",
+    "n_pos": 13,
+    "AP": 0.11090960045856303,
+    "nDCG@10": 0.06625422345438904,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "nature",
+    "n_pos": 21,
+    "AP": 0.1448603331047862,
+    "nDCG@10": 0.2172607128522299,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "construction_vehicle",
+    "n_pos": 29,
+    "AP": 0.2480145782535753,
+    "nDCG@10": 0.17366667134799182,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "trailer",
+    "n_pos": 9,
+    "AP": 0.06541377769157186,
+    "nDCG@10": 0.09092803061897885,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "animal",
+    "n_pos": 9,
+    "AP": 0.8222582972582972,
+    "nDCG@10": 0.8488904096270611,
+    "P@10": 0.8
+   },
+   {
+    "group": "compositional",
+    "gt": "night+rain",
+    "n_pos": 16,
+    "AP": 0.5042004484091177,
+    "nDCG@10": 0.5834330535576522,
+    "P@10": 0.5
+   },
+   {
+    "group": "compositional",
+    "gt": "night+turn_left",
+    "n_pos": 6,
+    "AP": 0.49341168091168086,
+    "nDCG@10": 0.4935232796777482,
+    "P@10": 0.2
+   },
+   {
+    "group": "compositional",
+    "gt": "night+turn_right",
+    "n_pos": 10,
+    "AP": 0.7842432372009837,
+    "nDCG@10": 0.793584067764911,
+    "P@10": 0.7
+   },
+   {
+    "group": "compositional",
+    "gt": "night+pedestrians",
+    "n_pos": 30,
+    "AP": 0.6727847711121501,
+    "nDCG@10": 0.7065443116025598,
+    "P@10": 0.8
+   },
+   {
+    "group": "compositional",
+    "gt": "turn_left+pedestrians",
+    "n_pos": 24,
+    "AP": 0.710363139747801,
+    "nDCG@10": 1.0,
+    "P@10": 1.0
+   },
+   {
+    "group": "compositional",
+    "gt": "turn_right+pedestrians",
+    "n_pos": 43,
+    "AP": 0.5326982700200296,
+    "nDCG@10": 0.5270672065167424,
+    "P@10": 0.6
+   },
+   {
+    "group": "compositional",
+    "gt": "wait_at_intersection+pedestrians",
+    "n_pos": 64,
+    "AP": 0.529296205782473,
+    "nDCG@10": 0.4115325995630327,
+    "P@10": 0.5
+   },
+   {
+    "group": "compositional",
+    "gt": "wait_at_intersection+truck",
+    "n_pos": 23,
+    "AP": 0.06164635622880999,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "compositional",
+    "gt": "parking_lot+pedestrians",
+    "n_pos": 74,
+    "AP": 0.22643515114957333,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "compositional",
+    "gt": "construction_zone+cones",
+    "n_pos": 12,
+    "AP": 0.21042748667716982,
+    "nDCG@10": 0.13886244387355456,
+    "P@10": 0.1
+   },
+   {
+    "group": "compositional",
+    "gt": "bus+pedestrians",
+    "n_pos": 60,
+    "AP": 0.49161194761650967,
+    "nDCG@10": 0.61886564587798,
+    "P@10": 0.7
+   },
+   {
+    "group": "compositional",
+    "gt": "parked_cars+pedestrians",
+    "n_pos": 89,
+    "AP": 0.40268883548136414,
+    "nDCG@10": 0.3250640124440019,
+    "P@10": 0.4
+   },
+   {
+    "group": "compositional",
+    "gt": "jaywalker+parked_cars",
+    "n_pos": 11,
+    "AP": 0.06933794261344473,
+    "nDCG@10": 0.09478836436955079,
+    "P@10": 0.1
+   }
+  ],
+  "zero-shot hybrid": [
+   {
+    "group": "single",
+    "gt": "night",
+    "n_pos": 66,
+    "AP": 1.0,
+    "nDCG@10": 1.0,
+    "P@10": 1.0
+   },
+   {
+    "group": "single",
+    "gt": "rain",
+    "n_pos": 17,
+    "AP": 0.2825335951555198,
+    "nDCG@10": 0.3924909353525192,
+    "P@10": 0.35
+   },
+   {
+    "group": "single",
+    "gt": "parking_lot",
+    "n_pos": 95,
+    "AP": 0.39381385903163635,
+    "nDCG@10": 0.6594957720375697,
+    "P@10": 0.6000000000000001
+   },
+   {
+    "group": "single",
+    "gt": "wait_at_intersection",
+    "n_pos": 87,
+    "AP": 0.477585306843626,
+    "nDCG@10": 0.7355180774812637,
+    "P@10": 0.75
+   },
+   {
+    "group": "single",
+    "gt": "turn_left",
+    "n_pos": 36,
+    "AP": 0.5341604194320433,
+    "nDCG@10": 0.6471950516612803,
+    "P@10": 0.6499999999999999
+   },
+   {
+    "group": "single",
+    "gt": "turn_right",
+    "n_pos": 55,
+    "AP": 0.6924598740485233,
+    "nDCG@10": 0.7511018655665633,
+    "P@10": 0.75
+   },
+   {
+    "group": "single",
+    "gt": "cross_intersection",
+    "n_pos": 37,
+    "AP": 0.18272975521469564,
+    "nDCG@10": 0.16097526959439942,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "bus",
+    "n_pos": 85,
+    "AP": 0.6751270904411885,
+    "nDCG@10": 0.8180057214745251,
+    "P@10": 0.8
+   },
+   {
+    "group": "single",
+    "gt": "truck",
+    "n_pos": 96,
+    "AP": 0.5659208465534877,
+    "nDCG@10": 0.83493117527644,
+    "P@10": 0.9
+   },
+   {
+    "group": "single",
+    "gt": "construction_zone",
+    "n_pos": 64,
+    "AP": 0.6939112171763357,
+    "nDCG@10": 0.9286024279819314,
+    "P@10": 0.9
+   },
+   {
+    "group": "single",
+    "gt": "cones",
+    "n_pos": 50,
+    "AP": 0.2166518451617665,
+    "nDCG@10": 0.27935741034355366,
+    "P@10": 0.3
+   },
+   {
+    "group": "single",
+    "gt": "barriers",
+    "n_pos": 20,
+    "AP": 0.0677135685465687,
+    "nDCG@10": 0.03919913448933767,
+    "P@10": 0.05
+   },
+   {
+    "group": "single",
+    "gt": "parked_cars",
+    "n_pos": 115,
+    "AP": 0.48270195308377495,
+    "nDCG@10": 0.4543897429055034,
+    "P@10": 0.5
+   },
+   {
+    "group": "single",
+    "gt": "many_pedestrians",
+    "n_pos": 38,
+    "AP": 0.24493766323941363,
+    "nDCG@10": 0.37255200311374137,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "ped_crossing",
+    "n_pos": 53,
+    "AP": 0.3592982794513564,
+    "nDCG@10": 0.7011329159332601,
+    "P@10": 0.6
+   },
+   {
+    "group": "single",
+    "gt": "jaywalker",
+    "n_pos": 33,
+    "AP": 0.12729304747577574,
+    "nDCG@10": 0.10900820726621221,
+    "P@10": 0.15000000000000002
+   },
+   {
+    "group": "single",
+    "gt": "cyclist",
+    "n_pos": 19,
+    "AP": 0.22154153476305632,
+    "nDCG@10": 0.22110979711900647,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "parked_bicycles",
+    "n_pos": 66,
+    "AP": 0.35939608523794153,
+    "nDCG@10": 0.4718367215414468,
+    "P@10": 0.44999999999999996
+   },
+   {
+    "group": "single",
+    "gt": "bicycle_rack",
+    "n_pos": 15,
+    "AP": 0.4439001064223337,
+    "nDCG@10": 0.37609665984706897,
+    "P@10": 0.5
+   },
+   {
+    "group": "single",
+    "gt": "motorcycle",
+    "n_pos": 60,
+    "AP": 0.3511012423872738,
+    "nDCG@10": 0.3177657024746422,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "motorcyclist",
+    "n_pos": 59,
+    "AP": 0.48850525602898165,
+    "nDCG@10": 0.6781603874580987,
+    "P@10": 0.6
+   },
+   {
+    "group": "single",
+    "gt": "bus_stop",
+    "n_pos": 22,
+    "AP": 0.1498022167011238,
+    "nDCG@10": 0.2200917662980802,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "dense_traffic",
+    "n_pos": 27,
+    "AP": 0.2758456340492739,
+    "nDCG@10": 0.40095530057217743,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "lane_change",
+    "n_pos": 12,
+    "AP": 0.13699797630914345,
+    "nDCG@10": 0.10281992268828939,
+    "P@10": 0.15000000000000002
+   },
+   {
+    "group": "single",
+    "gt": "overtaken",
+    "n_pos": 17,
+    "AP": 0.1750385780613516,
+    "nDCG@10": 0.06943122193677728,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "high_speed",
+    "n_pos": 11,
+    "AP": 0.89512987012987,
+    "nDCG@10": 0.8701249883466594,
+    "P@10": 0.8
+   },
+   {
+    "group": "single",
+    "gt": "bridge",
+    "n_pos": 13,
+    "AP": 0.13570821616766546,
+    "nDCG@10": 0.16412050546319507,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "nature",
+    "n_pos": 21,
+    "AP": 0.19055282443962362,
+    "nDCG@10": 0.33691717041963287,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "construction_vehicle",
+    "n_pos": 29,
+    "AP": 0.24295499614829788,
+    "nDCG@10": 0.15120191524692544,
+    "P@10": 0.15000000000000002
+   },
+   {
+    "group": "single",
+    "gt": "trailer",
+    "n_pos": 9,
+    "AP": 0.11062537258450068,
+    "nDCG@10": 0.22383803325767476,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "animal",
+    "n_pos": 9,
+    "AP": 0.8430695847362515,
+    "nDCG@10": 0.8699822538522316,
+    "P@10": 0.8
+   },
+   {
+    "group": "compositional",
+    "gt": "night+rain",
+    "n_pos": 16,
+    "AP": 0.5078698178624089,
+    "nDCG@10": 0.647053841756604,
+    "P@10": 0.6
+   },
+   {
+    "group": "compositional",
+    "gt": "night+turn_left",
+    "n_pos": 6,
+    "AP": 0.4789016174253788,
+    "nDCG@10": 0.4935232796777482,
+    "P@10": 0.2
+   },
+   {
+    "group": "compositional",
+    "gt": "night+turn_right",
+    "n_pos": 10,
+    "AP": 0.8155677655677656,
+    "nDCG@10": 0.8006937664098821,
+    "P@10": 0.7
+   },
+   {
+    "group": "compositional",
+    "gt": "night+pedestrians",
+    "n_pos": 30,
+    "AP": 0.8174915830913191,
+    "nDCG@10": 1.0,
+    "P@10": 1.0
+   },
+   {
+    "group": "compositional",
+    "gt": "turn_left+pedestrians",
+    "n_pos": 24,
+    "AP": 0.6534388426945629,
+    "nDCG@10": 0.8603818544462509,
+    "P@10": 0.8
+   },
+   {
+    "group": "compositional",
+    "gt": "turn_right+pedestrians",
+    "n_pos": 43,
+    "AP": 0.5649973423310481,
+    "nDCG@10": 0.6969179698201176,
+    "P@10": 0.7
+   },
+   {
+    "group": "compositional",
+    "gt": "wait_at_intersection+pedestrians",
+    "n_pos": 64,
+    "AP": 0.6596942324179202,
+    "nDCG@10": 0.7849818707050383,
+    "P@10": 0.7
+   },
+   {
+    "group": "compositional",
+    "gt": "wait_at_intersection+truck",
+    "n_pos": 23,
+    "AP": 0.07423085452224458,
+    "nDCG@10": 0.07336392209936006,
+    "P@10": 0.1
+   },
+   {
+    "group": "compositional",
+    "gt": "parking_lot+pedestrians",
+    "n_pos": 74,
+    "AP": 0.30159993320439804,
+    "nDCG@10": 0.45374257454118555,
+    "P@10": 0.3
+   },
+   {
+    "group": "compositional",
+    "gt": "construction_zone+cones",
+    "n_pos": 12,
+    "AP": 0.16525209416636868,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "compositional",
+    "gt": "bus+pedestrians",
+    "n_pos": 60,
+    "AP": 0.5755343941569221,
+    "nDCG@10": 0.6117952373568122,
+    "P@10": 0.5
+   },
+   {
+    "group": "compositional",
+    "gt": "parked_cars+pedestrians",
+    "n_pos": 89,
+    "AP": 0.36628751906639717,
+    "nDCG@10": 0.31831916378105624,
+    "P@10": 0.4
+   },
+   {
+    "group": "compositional",
+    "gt": "jaywalker+parked_cars",
+    "n_pos": 11,
+    "AP": 0.06747487645765689,
+    "nDCG@10": 0.08514311764162101,
+    "P@10": 0.1
+   }
+  ],
+  "zero-shot clip": [
+   {
+    "group": "single",
+    "gt": "night",
+    "n_pos": 66,
+    "AP": 0.993688791589991,
+    "nDCG@10": 1.0,
+    "P@10": 1.0
+   },
+   {
+    "group": "single",
+    "gt": "rain",
+    "n_pos": 17,
+    "AP": 0.46248175856466106,
+    "nDCG@10": 0.5659175877006282,
+    "P@10": 0.55
+   },
+   {
+    "group": "single",
+    "gt": "parking_lot",
+    "n_pos": 95,
+    "AP": 0.3260625179220252,
+    "nDCG@10": 0.5029052168689129,
+    "P@10": 0.45
+   },
+   {
+    "group": "single",
+    "gt": "wait_at_intersection",
+    "n_pos": 87,
+    "AP": 0.3553804736476056,
+    "nDCG@10": 0.40358100732771185,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "turn_left",
+    "n_pos": 36,
+    "AP": 0.10389585224906503,
+    "nDCG@10": 0.07569867054800503,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "turn_right",
+    "n_pos": 55,
+    "AP": 0.18857487556228664,
+    "nDCG@10": 0.26448192251873637,
+    "P@10": 0.25
+   },
+   {
+    "group": "single",
+    "gt": "cross_intersection",
+    "n_pos": 37,
+    "AP": 0.12162839645965609,
+    "nDCG@10": 0.07728716978919914,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "bus",
+    "n_pos": 85,
+    "AP": 0.5800961783670608,
+    "nDCG@10": 0.9100342589944141,
+    "P@10": 0.9
+   },
+   {
+    "group": "single",
+    "gt": "truck",
+    "n_pos": 96,
+    "AP": 0.28279127047588903,
+    "nDCG@10": 0.5327689059489988,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "construction_zone",
+    "n_pos": 64,
+    "AP": 0.40800043428521066,
+    "nDCG@10": 0.7957320407871022,
+    "P@10": 0.85
+   },
+   {
+    "group": "single",
+    "gt": "cones",
+    "n_pos": 50,
+    "AP": 0.13073973687887597,
+    "nDCG@10": 0.17788860584462324,
+    "P@10": 0.15000000000000002
+   },
+   {
+    "group": "single",
+    "gt": "barriers",
+    "n_pos": 20,
+    "AP": 0.0666784244975468,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "single",
+    "gt": "parked_cars",
+    "n_pos": 115,
+    "AP": 0.28533701901268566,
+    "nDCG@10": 0.18536670285694784,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "many_pedestrians",
+    "n_pos": 38,
+    "AP": 0.13176642547760956,
+    "nDCG@10": 0.14082879395484593,
+    "P@10": 0.15000000000000002
+   },
+   {
+    "group": "single",
+    "gt": "ped_crossing",
+    "n_pos": 53,
+    "AP": 0.4907189197248245,
+    "nDCG@10": 0.8417690923079355,
+    "P@10": 0.8
+   },
+   {
+    "group": "single",
+    "gt": "jaywalker",
+    "n_pos": 33,
+    "AP": 0.08115178779979998,
+    "nDCG@10": 0.042571558820810505,
+    "P@10": 0.05
+   },
+   {
+    "group": "single",
+    "gt": "cyclist",
+    "n_pos": 19,
+    "AP": 0.0503101256242616,
+    "nDCG@10": 0.042571558820810505,
+    "P@10": 0.05
+   },
+   {
+    "group": "single",
+    "gt": "parked_bicycles",
+    "n_pos": 66,
+    "AP": 0.2691334735809596,
+    "nDCG@10": 0.5310297443303847,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "bicycle_rack",
+    "n_pos": 15,
+    "AP": 0.06657169205035003,
+    "nDCG@10": 0.03312711172719452,
+    "P@10": 0.05
+   },
+   {
+    "group": "single",
+    "gt": "motorcycle",
+    "n_pos": 60,
+    "AP": 0.23214875188258843,
+    "nDCG@10": 0.37176088900756576,
+    "P@10": 0.30000000000000004
+   },
+   {
+    "group": "single",
+    "gt": "motorcyclist",
+    "n_pos": 59,
+    "AP": 0.26164003565943716,
+    "nDCG@10": 0.4026326880673467,
+    "P@10": 0.45
+   },
+   {
+    "group": "single",
+    "gt": "bus_stop",
+    "n_pos": 22,
+    "AP": 0.1997446742991543,
+    "nDCG@10": 0.3634377336925838,
+    "P@10": 0.25
+   },
+   {
+    "group": "single",
+    "gt": "dense_traffic",
+    "n_pos": 27,
+    "AP": 0.25095508849972614,
+    "nDCG@10": 0.3199720715558164,
+    "P@10": 0.3
+   },
+   {
+    "group": "single",
+    "gt": "lane_change",
+    "n_pos": 12,
+    "AP": 0.04965836359439362,
+    "nDCG@10": 0.031810394099475864,
+    "P@10": 0.05
+   },
+   {
+    "group": "single",
+    "gt": "overtaken",
+    "n_pos": 17,
+    "AP": 0.04073771246325078,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "single",
+    "gt": "high_speed",
+    "n_pos": 11,
+    "AP": 0.3281872107907981,
+    "nDCG@10": 0.3907646042711106,
+    "P@10": 0.25
+   },
+   {
+    "group": "single",
+    "gt": "bridge",
+    "n_pos": 13,
+    "AP": 0.12318233345776886,
+    "nDCG@10": 0.1797042935484946,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "nature",
+    "n_pos": 21,
+    "AP": 0.1857611169881436,
+    "nDCG@10": 0.3089810804237568,
+    "P@10": 0.30000000000000004
+   },
+   {
+    "group": "single",
+    "gt": "construction_vehicle",
+    "n_pos": 29,
+    "AP": 0.13508257728943213,
+    "nDCG@10": 0.18017441070702894,
+    "P@10": 0.25
+   },
+   {
+    "group": "single",
+    "gt": "trailer",
+    "n_pos": 9,
+    "AP": 0.022377351964798058,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "single",
+    "gt": "animal",
+    "n_pos": 9,
+    "AP": 0.025531838114650846,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "compositional",
+    "gt": "night+rain",
+    "n_pos": 16,
+    "AP": 0.48170515575843653,
+    "nDCG@10": 0.6659485553357845,
+    "P@10": 0.7
+   },
+   {
+    "group": "compositional",
+    "gt": "night+turn_left",
+    "n_pos": 6,
+    "AP": 0.09081451925814783,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "compositional",
+    "gt": "night+turn_right",
+    "n_pos": 10,
+    "AP": 0.24436515232289877,
+    "nDCG@10": 0.29345568839744024,
+    "P@10": 0.2
+   },
+   {
+    "group": "compositional",
+    "gt": "night+pedestrians",
+    "n_pos": 30,
+    "AP": 0.6375482403322548,
+    "nDCG@10": 0.7215194105726963,
+    "P@10": 0.7
+   },
+   {
+    "group": "compositional",
+    "gt": "turn_left+pedestrians",
+    "n_pos": 24,
+    "AP": 0.05666281005206961,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "compositional",
+    "gt": "turn_right+pedestrians",
+    "n_pos": 43,
+    "AP": 0.12900623281378565,
+    "nDCG@10": 0.15139734109601005,
+    "P@10": 0.2
+   },
+   {
+    "group": "compositional",
+    "gt": "wait_at_intersection+pedestrians",
+    "n_pos": 64,
+    "AP": 0.2807794808083497,
+    "nDCG@10": 0.4892835987503299,
+    "P@10": 0.6
+   },
+   {
+    "group": "compositional",
+    "gt": "wait_at_intersection+truck",
+    "n_pos": 23,
+    "AP": 0.08412933787500194,
+    "nDCG@10": 0.09478836436955079,
+    "P@10": 0.1
+   },
+   {
+    "group": "compositional",
+    "gt": "parking_lot+pedestrians",
+    "n_pos": 74,
+    "AP": 0.3338470851906585,
+    "nDCG@10": 0.7631925784528223,
+    "P@10": 0.7
+   },
+   {
+    "group": "compositional",
+    "gt": "construction_zone+cones",
+    "n_pos": 12,
+    "AP": 0.31704128353837546,
+    "nDCG@10": 0.4323181322709948,
+    "P@10": 0.3
+   },
+   {
+    "group": "compositional",
+    "gt": "bus+pedestrians",
+    "n_pos": 60,
+    "AP": 0.5242612833961754,
+    "nDCG@10": 0.7877736340270853,
+    "P@10": 0.8
+   },
+   {
+    "group": "compositional",
+    "gt": "parked_cars+pedestrians",
+    "n_pos": 89,
+    "AP": 0.25015866897520644,
+    "nDCG@10": 0.23365080824310536,
+    "P@10": 0.2
+   },
+   {
+    "group": "compositional",
+    "gt": "jaywalker+parked_cars",
+    "n_pos": 11,
+    "AP": 0.028612359690464547,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   }
+  ],
+  "zero-shot open_vocab": [
+   {
+    "group": "single",
+    "gt": "night",
+    "n_pos": 66,
+    "AP": 0.9794927259806752,
+    "nDCG@10": 1.0,
+    "P@10": 1.0
+   },
+   {
+    "group": "single",
+    "gt": "rain",
+    "n_pos": 17,
+    "AP": 0.2238432594886002,
+    "nDCG@10": 0.35838374175136695,
+    "P@10": 0.35
+   },
+   {
+    "group": "single",
+    "gt": "parking_lot",
+    "n_pos": 95,
+    "AP": 0.3548731143206293,
+    "nDCG@10": 0.624880957937634,
+    "P@10": 0.55
+   },
+   {
+    "group": "single",
+    "gt": "wait_at_intersection",
+    "n_pos": 87,
+    "AP": 0.5153148868911676,
+    "nDCG@10": 0.6956908805627882,
+    "P@10": 0.75
+   },
+   {
+    "group": "single",
+    "gt": "turn_left",
+    "n_pos": 36,
+    "AP": 0.23225140464641678,
+    "nDCG@10": 0.48859574560186203,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "turn_right",
+    "n_pos": 55,
+    "AP": 0.27726492692350724,
+    "nDCG@10": 0.39524394767748494,
+    "P@10": 0.44999999999999996
+   },
+   {
+    "group": "single",
+    "gt": "cross_intersection",
+    "n_pos": 37,
+    "AP": 0.1675953323444952,
+    "nDCG@10": 0.16097526959439942,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "bus",
+    "n_pos": 85,
+    "AP": 0.616350747375106,
+    "nDCG@10": 0.8341531634553965,
+    "P@10": 0.8
+   },
+   {
+    "group": "single",
+    "gt": "truck",
+    "n_pos": 96,
+    "AP": 0.3107878378298501,
+    "nDCG@10": 0.44578416778116875,
+    "P@10": 0.35
+   },
+   {
+    "group": "single",
+    "gt": "construction_zone",
+    "n_pos": 64,
+    "AP": 0.5152441060642879,
+    "nDCG@10": 0.6782982192983132,
+    "P@10": 0.65
+   },
+   {
+    "group": "single",
+    "gt": "cones",
+    "n_pos": 50,
+    "AP": 0.18501588323886176,
+    "nDCG@10": 0.2926064499802082,
+    "P@10": 0.3
+   },
+   {
+    "group": "single",
+    "gt": "barriers",
+    "n_pos": 20,
+    "AP": 0.058924386833788395,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "single",
+    "gt": "parked_cars",
+    "n_pos": 115,
+    "AP": 0.3619996661916821,
+    "nDCG@10": 0.2923596164556294,
+    "P@10": 0.35
+   },
+   {
+    "group": "single",
+    "gt": "many_pedestrians",
+    "n_pos": 38,
+    "AP": 0.15554695430637672,
+    "nDCG@10": 0.24951336632536916,
+    "P@10": 0.3
+   },
+   {
+    "group": "single",
+    "gt": "ped_crossing",
+    "n_pos": 53,
+    "AP": 0.4614528112411125,
+    "nDCG@10": 0.8739675298366665,
+    "P@10": 0.8500000000000001
+   },
+   {
+    "group": "single",
+    "gt": "jaywalker",
+    "n_pos": 33,
+    "AP": 0.09904194926418508,
+    "nDCG@10": 0.03312711172719452,
+    "P@10": 0.05
+   },
+   {
+    "group": "single",
+    "gt": "cyclist",
+    "n_pos": 19,
+    "AP": 0.11166201553756697,
+    "nDCG@10": 0.1294048944948064,
+    "P@10": 0.15000000000000002
+   },
+   {
+    "group": "single",
+    "gt": "parked_bicycles",
+    "n_pos": 66,
+    "AP": 0.27533570864851153,
+    "nDCG@10": 0.2602101225131377,
+    "P@10": 0.30000000000000004
+   },
+   {
+    "group": "single",
+    "gt": "bicycle_rack",
+    "n_pos": 15,
+    "AP": 0.16252176010812674,
+    "nDCG@10": 0.12154894664238455,
+    "P@10": 0.15000000000000002
+   },
+   {
+    "group": "single",
+    "gt": "motorcycle",
+    "n_pos": 60,
+    "AP": 0.26593500998003855,
+    "nDCG@10": 0.4430691044031716,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "motorcyclist",
+    "n_pos": 59,
+    "AP": 0.35021233054821976,
+    "nDCG@10": 0.5158238070851825,
+    "P@10": 0.45
+   },
+   {
+    "group": "single",
+    "gt": "bus_stop",
+    "n_pos": 22,
+    "AP": 0.057437704377547444,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "single",
+    "gt": "dense_traffic",
+    "n_pos": 27,
+    "AP": 0.13240801727826787,
+    "nDCG@10": 0.08177069331014818,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "lane_change",
+    "n_pos": 12,
+    "AP": 0.1182343666009327,
+    "nDCG@10": 0.13594703441548392,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "overtaken",
+    "n_pos": 17,
+    "AP": 0.07065484337392423,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "single",
+    "gt": "high_speed",
+    "n_pos": 11,
+    "AP": 0.47562940298064227,
+    "nDCG@10": 0.47601625522860835,
+    "P@10": 0.35
+   },
+   {
+    "group": "single",
+    "gt": "bridge",
+    "n_pos": 13,
+    "AP": 0.28764206337821996,
+    "nDCG@10": 0.4629496405829664,
+    "P@10": 0.35
+   },
+   {
+    "group": "single",
+    "gt": "nature",
+    "n_pos": 21,
+    "AP": 0.1048171741994662,
+    "nDCG@10": 0.06943122193677728,
+    "P@10": 0.05
+   },
+   {
+    "group": "single",
+    "gt": "construction_vehicle",
+    "n_pos": 29,
+    "AP": 0.17172253605156568,
+    "nDCG@10": 0.30485994279557826,
+    "P@10": 0.35
+   },
+   {
+    "group": "single",
+    "gt": "trailer",
+    "n_pos": 9,
+    "AP": 0.03539787470526844,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "single",
+    "gt": "animal",
+    "n_pos": 9,
+    "AP": 0.2785122473979968,
+    "nDCG@10": 0.3619084193989204,
+    "P@10": 0.25
+   },
+   {
+    "group": "compositional",
+    "gt": "night+rain",
+    "n_pos": 16,
+    "AP": 0.39981482490840475,
+    "nDCG@10": 0.3372080579682882,
+    "P@10": 0.4
+   },
+   {
+    "group": "compositional",
+    "gt": "night+turn_left",
+    "n_pos": 6,
+    "AP": 0.17897421933416233,
+    "nDCG@10": 0.2467616398388741,
+    "P@10": 0.2
+   },
+   {
+    "group": "compositional",
+    "gt": "night+turn_right",
+    "n_pos": 10,
+    "AP": 0.5828701220852477,
+    "nDCG@10": 0.6117952373568122,
+    "P@10": 0.5
+   },
+   {
+    "group": "compositional",
+    "gt": "night+pedestrians",
+    "n_pos": 30,
+    "AP": 0.8564572188327162,
+    "nDCG@10": 1.0,
+    "P@10": 1.0
+   },
+   {
+    "group": "compositional",
+    "gt": "turn_left+pedestrians",
+    "n_pos": 24,
+    "AP": 0.10107818962574806,
+    "nDCG@10": 0.14465249243306438,
+    "P@10": 0.2
+   },
+   {
+    "group": "compositional",
+    "gt": "turn_right+pedestrians",
+    "n_pos": 43,
+    "AP": 0.25532701171890465,
+    "nDCG@10": 0.3052348839397012,
+    "P@10": 0.2
+   },
+   {
+    "group": "compositional",
+    "gt": "wait_at_intersection+pedestrians",
+    "n_pos": 64,
+    "AP": 0.5926970410205176,
+    "nDCG@10": 0.7849818707050383,
+    "P@10": 0.7
+   },
+   {
+    "group": "compositional",
+    "gt": "wait_at_intersection+truck",
+    "n_pos": 23,
+    "AP": 0.1578382759510046,
+    "nDCG@10": 0.14201905717762706,
+    "P@10": 0.2
+   },
+   {
+    "group": "compositional",
+    "gt": "parking_lot+pedestrians",
+    "n_pos": 74,
+    "AP": 0.3031349421342564,
+    "nDCG@10": 0.5107164012496702,
+    "P@10": 0.4
+   },
+   {
+    "group": "compositional",
+    "gt": "construction_zone+cones",
+    "n_pos": 12,
+    "AP": 0.15650730421990175,
+    "nDCG@10": 0.09478836436955079,
+    "P@10": 0.1
+   },
+   {
+    "group": "compositional",
+    "gt": "bus+pedestrians",
+    "n_pos": 60,
+    "AP": 0.49525833955820436,
+    "nDCG@10": 0.5836175861945263,
+    "P@10": 0.5
+   },
+   {
+    "group": "compositional",
+    "gt": "parked_cars+pedestrians",
+    "n_pos": 89,
+    "AP": 0.25622060324254087,
+    "nDCG@10": 0.133052010135729,
+    "P@10": 0.2
+   },
+   {
+    "group": "compositional",
+    "gt": "jaywalker+parked_cars",
+    "n_pos": 11,
+    "AP": 0.041046251674022025,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   }
+  ],
+  "learned structured": [
+   {
+    "group": "single",
+    "gt": "night",
+    "n_pos": 66,
+    "AP": 1.0,
+    "nDCG@10": 1.0,
+    "P@10": 1.0
+   },
+   {
+    "group": "single",
+    "gt": "rain",
+    "n_pos": 17,
+    "AP": 0.11608578816520679,
+    "nDCG@10": 0.1100458831490401,
+    "P@10": 0.05
+   },
+   {
+    "group": "single",
+    "gt": "parking_lot",
+    "n_pos": 95,
+    "AP": 0.5269540847833207,
+    "nDCG@10": 0.8165901947515999,
+    "P@10": 0.8
+   },
+   {
+    "group": "single",
+    "gt": "wait_at_intersection",
+    "n_pos": 87,
+    "AP": 0.7184276089181008,
+    "nDCG@10": 0.9131666643260041,
+    "P@10": 0.9
+   },
+   {
+    "group": "single",
+    "gt": "turn_left",
+    "n_pos": 36,
+    "AP": 0.5662973165598556,
+    "nDCG@10": 0.8607597052863483,
+    "P@10": 0.8
+   },
+   {
+    "group": "single",
+    "gt": "turn_right",
+    "n_pos": 55,
+    "AP": 0.6667975287359673,
+    "nDCG@10": 0.8552385058825713,
+    "P@10": 0.9
+   },
+   {
+    "group": "single",
+    "gt": "cross_intersection",
+    "n_pos": 37,
+    "AP": 0.10650557197724893,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "single",
+    "gt": "bus",
+    "n_pos": 85,
+    "AP": 0.4733819301186469,
+    "nDCG@10": 0.7131031868891646,
+    "P@10": 0.7
+   },
+   {
+    "group": "single",
+    "gt": "truck",
+    "n_pos": 96,
+    "AP": 0.49536256580686366,
+    "nDCG@10": 0.8643145546088339,
+    "P@10": 0.8
+   },
+   {
+    "group": "single",
+    "gt": "construction_zone",
+    "n_pos": 64,
+    "AP": 0.7245647160032922,
+    "nDCG@10": 1.0,
+    "P@10": 1.0
+   },
+   {
+    "group": "single",
+    "gt": "cones",
+    "n_pos": 50,
+    "AP": 0.275094690150188,
+    "nDCG@10": 0.34445239307234,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "barriers",
+    "n_pos": 20,
+    "AP": 0.10764341289017204,
+    "nDCG@10": 0.1574400653338155,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "parked_cars",
+    "n_pos": 115,
+    "AP": 0.5819664264067844,
+    "nDCG@10": 0.8512360941594275,
+    "P@10": 0.8
+   },
+   {
+    "group": "single",
+    "gt": "many_pedestrians",
+    "n_pos": 38,
+    "AP": 0.23610851250076523,
+    "nDCG@10": 0.2784805894273037,
+    "P@10": 0.3
+   },
+   {
+    "group": "single",
+    "gt": "ped_crossing",
+    "n_pos": 53,
+    "AP": 0.365033115799712,
+    "nDCG@10": 0.5505292254644132,
+    "P@10": 0.6
+   },
+   {
+    "group": "single",
+    "gt": "jaywalker",
+    "n_pos": 33,
+    "AP": 0.12183771874127489,
+    "nDCG@10": 0.07920457628425126,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "cyclist",
+    "n_pos": 19,
+    "AP": 0.2336562002247407,
+    "nDCG@10": 0.24928617786269194,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "parked_bicycles",
+    "n_pos": 66,
+    "AP": 0.3606201390100251,
+    "nDCG@10": 0.285807283945794,
+    "P@10": 0.35
+   },
+   {
+    "group": "single",
+    "gt": "bicycle_rack",
+    "n_pos": 15,
+    "AP": 0.35760027172677394,
+    "nDCG@10": 0.3241295975188818,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "motorcycle",
+    "n_pos": 60,
+    "AP": 0.3804054583192778,
+    "nDCG@10": 0.5829393865084945,
+    "P@10": 0.6
+   },
+   {
+    "group": "single",
+    "gt": "motorcyclist",
+    "n_pos": 59,
+    "AP": 0.5979575415218564,
+    "nDCG@10": 1.0,
+    "P@10": 1.0
+   },
+   {
+    "group": "single",
+    "gt": "bus_stop",
+    "n_pos": 22,
+    "AP": 0.2505053081364805,
+    "nDCG@10": 0.46900009332067494,
+    "P@10": 0.3
+   },
+   {
+    "group": "single",
+    "gt": "dense_traffic",
+    "n_pos": 27,
+    "AP": 0.12042906307629529,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "single",
+    "gt": "lane_change",
+    "n_pos": 12,
+    "AP": 0.09222009715823246,
+    "nDCG@10": 0.14924501763837777,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "overtaken",
+    "n_pos": 17,
+    "AP": 0.15466526649616352,
+    "nDCG@10": 0.2200917662980802,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "high_speed",
+    "n_pos": 11,
+    "AP": 0.8862193362193362,
+    "nDCG@10": 0.8669479898642711,
+    "P@10": 0.8
+   },
+   {
+    "group": "single",
+    "gt": "bridge",
+    "n_pos": 13,
+    "AP": 0.4188726079019105,
+    "nDCG@10": 0.510069131458292,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "nature",
+    "n_pos": 21,
+    "AP": 0.13104580942241445,
+    "nDCG@10": 0.06943122193677728,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "construction_vehicle",
+    "n_pos": 29,
+    "AP": 0.25844061224247566,
+    "nDCG@10": 0.28444935123173903,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "trailer",
+    "n_pos": 9,
+    "AP": 0.12437284089204487,
+    "nDCG@10": 0.1012286082123002,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "animal",
+    "n_pos": 9,
+    "AP": 0.4876812738601357,
+    "nDCG@10": 0.5546028700388129,
+    "P@10": 0.5
+   },
+   {
+    "group": "compositional",
+    "gt": "night+rain",
+    "n_pos": 16,
+    "AP": 0.22159744277441162,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "compositional",
+    "gt": "night+turn_left",
+    "n_pos": 6,
+    "AP": 0.6218360071301248,
+    "nDCG@10": 0.706046305905179,
+    "P@10": 0.4
+   },
+   {
+    "group": "compositional",
+    "gt": "night+turn_right",
+    "n_pos": 10,
+    "AP": 0.8171936936936938,
+    "nDCG@10": 0.7967610662472993,
+    "P@10": 0.7
+   },
+   {
+    "group": "compositional",
+    "gt": "night+pedestrians",
+    "n_pos": 30,
+    "AP": 0.8272263993041841,
+    "nDCG@10": 0.9216017310213247,
+    "P@10": 0.9
+   },
+   {
+    "group": "compositional",
+    "gt": "turn_left+pedestrians",
+    "n_pos": 24,
+    "AP": 0.567171524215257,
+    "nDCG@10": 0.7967610662472993,
+    "P@10": 0.7
+   },
+   {
+    "group": "compositional",
+    "gt": "turn_right+pedestrians",
+    "n_pos": 43,
+    "AP": 0.5211873790347489,
+    "nDCG@10": 0.7015099647232446,
+    "P@10": 0.8
+   },
+   {
+    "group": "compositional",
+    "gt": "wait_at_intersection+pedestrians",
+    "n_pos": 64,
+    "AP": 0.6268232655531493,
+    "nDCG@10": 0.9216017310213247,
+    "P@10": 0.9
+   },
+   {
+    "group": "compositional",
+    "gt": "wait_at_intersection+truck",
+    "n_pos": 23,
+    "AP": 0.17318399053431752,
+    "nDCG@10": 0.15457433957839828,
+    "P@10": 0.2
+   },
+   {
+    "group": "compositional",
+    "gt": "parking_lot+pedestrians",
+    "n_pos": 74,
+    "AP": 0.3884724757038733,
+    "nDCG@10": 0.5365535816822092,
+    "P@10": 0.5
+   },
+   {
+    "group": "compositional",
+    "gt": "construction_zone+cones",
+    "n_pos": 12,
+    "AP": 0.2569102474123191,
+    "nDCG@10": 0.16815228646891087,
+    "P@10": 0.2
+   },
+   {
+    "group": "compositional",
+    "gt": "bus+pedestrians",
+    "n_pos": 60,
+    "AP": 0.35210221238177436,
+    "nDCG@10": 0.5894280199323519,
+    "P@10": 0.5
+   },
+   {
+    "group": "compositional",
+    "gt": "parked_cars+pedestrians",
+    "n_pos": 89,
+    "AP": 0.39163063155552946,
+    "nDCG@10": 0.5289638450374727,
+    "P@10": 0.5
+   },
+   {
+    "group": "compositional",
+    "gt": "jaywalker+parked_cars",
+    "n_pos": 11,
+    "AP": 0.09330969660027731,
+    "nDCG@10": 0.13886244387355456,
+    "P@10": 0.1
+   }
+  ],
+  "learned hybrid": [
+   {
+    "group": "single",
+    "gt": "night",
+    "n_pos": 66,
+    "AP": 1.0,
+    "nDCG@10": 1.0,
+    "P@10": 1.0
+   },
+   {
+    "group": "single",
+    "gt": "rain",
+    "n_pos": 17,
+    "AP": 0.13174180898481697,
+    "nDCG@10": 0.1100458831490401,
+    "P@10": 0.05
+   },
+   {
+    "group": "single",
+    "gt": "parking_lot",
+    "n_pos": 95,
+    "AP": 0.5330147806983119,
+    "nDCG@10": 0.8468317346717833,
+    "P@10": 0.8
+   },
+   {
+    "group": "single",
+    "gt": "wait_at_intersection",
+    "n_pos": 87,
+    "AP": 0.7148329468859311,
+    "nDCG@10": 0.8899541168509599,
+    "P@10": 0.95
+   },
+   {
+    "group": "single",
+    "gt": "turn_left",
+    "n_pos": 36,
+    "AP": 0.5445341185204884,
+    "nDCG@10": 0.8339131444555137,
+    "P@10": 0.8
+   },
+   {
+    "group": "single",
+    "gt": "turn_right",
+    "n_pos": 55,
+    "AP": 0.6804401635146877,
+    "nDCG@10": 0.9305687780632228,
+    "P@10": 0.95
+   },
+   {
+    "group": "single",
+    "gt": "cross_intersection",
+    "n_pos": 37,
+    "AP": 0.11069540624897535,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "single",
+    "gt": "bus",
+    "n_pos": 85,
+    "AP": 0.5120204142441257,
+    "nDCG@10": 0.7446417993751651,
+    "P@10": 0.75
+   },
+   {
+    "group": "single",
+    "gt": "truck",
+    "n_pos": 96,
+    "AP": 0.517382571156727,
+    "nDCG@10": 1.0,
+    "P@10": 1.0
+   },
+   {
+    "group": "single",
+    "gt": "construction_zone",
+    "n_pos": 64,
+    "AP": 0.725744878698011,
+    "nDCG@10": 1.0,
+    "P@10": 1.0
+   },
+   {
+    "group": "single",
+    "gt": "cones",
+    "n_pos": 50,
+    "AP": 0.2725335496591741,
+    "nDCG@10": 0.34921542670666744,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "barriers",
+    "n_pos": 20,
+    "AP": 0.0803634587751396,
+    "nDCG@10": 0.06943122193677728,
+    "P@10": 0.05
+   },
+   {
+    "group": "single",
+    "gt": "parked_cars",
+    "n_pos": 115,
+    "AP": 0.5880440765413497,
+    "nDCG@10": 0.9363792118010483,
+    "P@10": 0.9
+   },
+   {
+    "group": "single",
+    "gt": "many_pedestrians",
+    "n_pos": 38,
+    "AP": 0.2317692538638832,
+    "nDCG@10": 0.2781027385872064,
+    "P@10": 0.3
+   },
+   {
+    "group": "single",
+    "gt": "ped_crossing",
+    "n_pos": 53,
+    "AP": 0.4023849390834046,
+    "nDCG@10": 0.6670257223321079,
+    "P@10": 0.6
+   },
+   {
+    "group": "single",
+    "gt": "jaywalker",
+    "n_pos": 33,
+    "AP": 0.12391554180775197,
+    "nDCG@10": 0.08815005330171458,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "cyclist",
+    "n_pos": 19,
+    "AP": 0.2250791512793016,
+    "nDCG@10": 0.2631652048910177,
+    "P@10": 0.25
+   },
+   {
+    "group": "single",
+    "gt": "parked_bicycles",
+    "n_pos": 66,
+    "AP": 0.39569048195977224,
+    "nDCG@10": 0.3630402377905849,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "bicycle_rack",
+    "n_pos": 15,
+    "AP": 0.3724547856576455,
+    "nDCG@10": 0.3241295975188818,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "motorcycle",
+    "n_pos": 60,
+    "AP": 0.37148378282858796,
+    "nDCG@10": 0.39401519638101345,
+    "P@10": 0.5
+   },
+   {
+    "group": "single",
+    "gt": "motorcyclist",
+    "n_pos": 59,
+    "AP": 0.590662471871825,
+    "nDCG@10": 0.9289904714111865,
+    "P@10": 0.9
+   },
+   {
+    "group": "single",
+    "gt": "bus_stop",
+    "n_pos": 22,
+    "AP": 0.21975108927518136,
+    "nDCG@10": 0.4229441987880529,
+    "P@10": 0.3
+   },
+   {
+    "group": "single",
+    "gt": "dense_traffic",
+    "n_pos": 27,
+    "AP": 0.1254060965381919,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "single",
+    "gt": "lane_change",
+    "n_pos": 12,
+    "AP": 0.14818909836377797,
+    "nDCG@10": 0.22844959392262904,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "overtaken",
+    "n_pos": 17,
+    "AP": 0.16448199229191757,
+    "nDCG@10": 0.2200917662980802,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "high_speed",
+    "n_pos": 11,
+    "AP": 0.89512987012987,
+    "nDCG@10": 0.8701249883466594,
+    "P@10": 0.8
+   },
+   {
+    "group": "single",
+    "gt": "bridge",
+    "n_pos": 13,
+    "AP": 0.4773480269118843,
+    "nDCG@10": 0.5589658343262608,
+    "P@10": 0.4
+   },
+   {
+    "group": "single",
+    "gt": "nature",
+    "n_pos": 21,
+    "AP": 0.14374903141837225,
+    "nDCG@10": 0.16860402898414406,
+    "P@10": 0.2
+   },
+   {
+    "group": "single",
+    "gt": "construction_vehicle",
+    "n_pos": 29,
+    "AP": 0.2599539424370815,
+    "nDCG@10": 0.20773264986280773,
+    "P@10": 0.30000000000000004
+   },
+   {
+    "group": "single",
+    "gt": "trailer",
+    "n_pos": 9,
+    "AP": 0.13113036007247558,
+    "nDCG@10": 0.12476291939122466,
+    "P@10": 0.1
+   },
+   {
+    "group": "single",
+    "gt": "animal",
+    "n_pos": 9,
+    "AP": 0.5609559422059421,
+    "nDCG@10": 0.59658484205853,
+    "P@10": 0.5
+   },
+   {
+    "group": "compositional",
+    "gt": "night+rain",
+    "n_pos": 16,
+    "AP": 0.23177899608885408,
+    "nDCG@10": 0.0,
+    "P@10": 0.0
+   },
+   {
+    "group": "compositional",
+    "gt": "night+turn_left",
+    "n_pos": 6,
+    "AP": 0.5694522868435911,
+    "nDCG@10": 0.6898511839334867,
+    "P@10": 0.4
+   },
+   {
+    "group": "compositional",
+    "gt": "night+turn_right",
+    "n_pos": 10,
+    "AP": 0.828837513061651,
+    "nDCG@10": 0.8603818544462509,
+    "P@10": 0.8
+   },
+   {
+    "group": "compositional",
+    "gt": "night+pedestrians",
+    "n_pos": 30,
+    "AP": 0.8545644342756469,
+    "nDCG@10": 0.9363792118010483,
+    "P@10": 0.9
+   },
+   {
+    "group": "compositional",
+    "gt": "turn_left+pedestrians",
+    "n_pos": 24,
+    "AP": 0.5525507065757173,
+    "nDCG@10": 0.7819835854675756,
+    "P@10": 0.7
+   },
+   {
+    "group": "compositional",
+    "gt": "turn_right+pedestrians",
+    "n_pos": 43,
+    "AP": 0.5398006596404402,
+    "nDCG@10": 0.7104770117651427,
+    "P@10": 0.8
+   },
+   {
+    "group": "compositional",
+    "gt": "wait_at_intersection+pedestrians",
+    "n_pos": 64,
+    "AP": 0.6470898276486894,
+    "nDCG@10": 0.92663607790064,
+    "P@10": 0.9
+   },
+   {
+    "group": "compositional",
+    "gt": "wait_at_intersection+truck",
+    "n_pos": 23,
+    "AP": 0.18719239974082888,
+    "nDCG@10": 0.14876390584057272,
+    "P@10": 0.2
+   },
+   {
+    "group": "compositional",
+    "gt": "parking_lot+pedestrians",
+    "n_pos": 74,
+    "AP": 0.40102100398175944,
+    "nDCG@10": 0.5680035776621611,
+    "P@10": 0.5
+   },
+   {
+    "group": "compositional",
+    "gt": "construction_zone+cones",
+    "n_pos": 12,
+    "AP": 0.24429738369017304,
+    "nDCG@10": 0.16354138662029635,
+    "P@10": 0.2
+   },
+   {
+    "group": "compositional",
+    "gt": "bus+pedestrians",
+    "n_pos": 60,
+    "AP": 0.4139469911704786,
+    "nDCG@10": 0.7381919257729246,
+    "P@10": 0.7
+   },
+   {
+    "group": "compositional",
+    "gt": "parked_cars+pedestrians",
+    "n_pos": 89,
+    "AP": 0.37954327567312385,
+    "nDCG@10": 0.5330752584449809,
+    "P@10": 0.5
+   },
+   {
+    "group": "compositional",
+    "gt": "jaywalker+parked_cars",
+    "n_pos": 11,
+    "AP": 0.09551994480112952,
+    "nDCG@10": 0.13886244387355456,
+    "P@10": 0.1
+   }
+  ]
+ },
+ "query_by_example_jaccard@5": {
+  "structured": 0.2788,
+  "clip": 0.2836,
+  "both": 0.296,
+  "random": 0.1517
+ },
+ "latency_ms": {
+  "p50": 15.9,
+  "p95": 153.2,
+  "n": 75
+ },
+ "learned_cv": {
+  "night": {
+   "cv_ap": -1.0,
+   "C": 0.1,
+   "n_pos": 33
+  },
+  "rain": {
+   "cv_ap": 0.49,
+   "C": 0.003,
+   "n_pos": 150
+  },
+  "parking_lot": {
+   "cv_ap": 0.42,
+   "C": 0.003,
+   "n_pos": 100
+  },
+  "wait_at_intersection": {
+   "cv_ap": 0.57,
+   "C": 0.003,
+   "n_pos": 94
+  },
+  "turn_left": {
+   "cv_ap": 0.746,
+   "C": 0.03,
+   "n_pos": 57
+  },
+  "turn_right": {
+   "cv_ap": 0.611,
+   "C": 0.01,
+   "n_pos": 66
+  },
+  "cross_intersection": {
+   "cv_ap": 0.362,
+   "C": 0.01,
+   "n_pos": 53
+  },
+  "intersection": {
+   "cv_ap": 0.554,
+   "C": 0.003,
+   "n_pos": 153
+  },
+  "bus": {
+   "cv_ap": 0.568,
+   "C": 0.01,
+   "n_pos": 76
+  },
+  "truck": {
+   "cv_ap": 0.445,
+   "C": 0.003,
+   "n_pos": 117
+  },
+  "construction_zone": {
+   "cv_ap": 0.662,
+   "C": 0.01,
+   "n_pos": 96
+  },
+  "cones": {
+   "cv_ap": 0.425,
+   "C": 0.003,
+   "n_pos": 41
+  },
+  "barriers": {
+   "cv_ap": 0.357,
+   "C": 0.003,
+   "n_pos": 31
+  },
+  "parked_cars": {
+   "cv_ap": 0.531,
+   "C": 0.003,
+   "n_pos": 168
+  },
+  "pedestrians": {
+   "cv_ap": 0.836,
+   "C": 0.01,
+   "n_pos": 249
+  },
+  "many_pedestrians": {
+   "cv_ap": 0.466,
+   "C": 0.003,
+   "n_pos": 12
+  },
+  "ped_crossing": {
+   "cv_ap": 0.356,
+   "C": 0.003,
+   "n_pos": 42
+  },
+  "jaywalker": {
+   "cv_ap": 0.161,
+   "C": 0.01,
+   "n_pos": 36
+  },
+  "cyclist": {
+   "cv_ap": 0.401,
+   "C": 0.03,
+   "n_pos": 24
+  },
+  "parked_bicycles": {
+   "cv_ap": 0.292,
+   "C": 0.003,
+   "n_pos": 58
+  },
+  "bicycle_rack": {
+   "cv_ap": 0.549,
+   "C": 0.01,
+   "n_pos": 29
+  },
+  "motorcycle": {
+   "cv_ap": 0.325,
+   "C": 0.003,
+   "n_pos": 30
+  },
+  "motorcyclist": {
+   "cv_ap": 0.255,
+   "C": 0.01,
+   "n_pos": 31
+  },
+  "bus_stop": {
+   "cv_ap": 0.3,
+   "C": 0.003,
+   "n_pos": 21
+  },
+  "lane_change": {
+   "cv_ap": 0.128,
+   "C": 0.003,
+   "n_pos": 13
+  },
+  "overtaken": {
+   "cv_ap": 0.184,
+   "C": 0.3,
+   "n_pos": 9
+  },
+  "dense_traffic": {
+   "cv_ap": 0.212,
+   "C": 0.03,
+   "n_pos": 27
+  },
+  "bridge": {
+   "cv_ap": 0.568,
+   "C": 0.03,
+   "n_pos": 22
+  },
+  "nature": {
+   "cv_ap": 0.154,
+   "C": 0.003,
+   "n_pos": 16
+  },
+  "construction_vehicle": {
+   "cv_ap": 0.382,
+   "C": 0.003,
+   "n_pos": 36
+  },
+  "trailer": {
+   "cv_ap": 0.154,
+   "C": 0.003,
+   "n_pos": 16
+  },
+  "animal": {
+   "cv_ap": 0.315,
+   "C": 0.003,
+   "n_pos": 8
+  }
+ },
+ "thresholds": {
+  "night": 27.3812,
+  "parking_lot": 0.0,
+  "wait_at_intersection": 1.75,
+  "turn_left": 55.9055,
+  "turn_right": 50.1999,
+  "cross_intersection": 0.5,
+  "intersection": 0.5,
+  "bus": 0.5,
+  "truck": 1.5,
+  "construction_zone": 23.5,
+  "cones": 19.5,
+  "barriers": 22.5,
+  "parked_cars": 1.5,
+  "pedestrians": 0.5,
+  "many_pedestrians": 34.62,
+  "ped_crossing": 1.5,
+  "jaywalker": 5.5,
+  "cyclist": 0.5,
+  "parked_bicycles": 0.5,
+  "bicycle_rack": 0.5,
+  "motorcycle": 0.5,
+  "motorcyclist": 0.5,
+  "lane_change": 1.5,
+  "overtaken": 0.5,
+  "dense_traffic": 3.6047,
+  "construction_vehicle": 1.5,
+  "trailer": 2.5,
+  "animal": 0.5
+ }
+}

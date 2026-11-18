@@ -1,0 +1,47 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: pip install -e ".[dev]"
+      - run: ruff check . && ruff format --check .
+      - run: pytest -q
+
+  results-are-reproducible:
+    # results/RESULTS.md must be the rendering of results/results.json (catches hand edits).
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[dev]"
+      - run: |
+          python - <<'PY'
+          import json, sys
+          from pathlib import Path
+          sys.path[:0] = ["src", "."]
+          from eval.run_eval import render_md
+          r = json.loads(Path("results/results.json").read_text())
+          assert Path("results/RESULTS.md").read_text() == render_md(r), "RESULTS.md was edited by hand"
+          PY
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t scenario-search .
+      - run: docker run --rm scenario-search python -c "import scenario_search.api, scenario_search.embed; print('ok')"
