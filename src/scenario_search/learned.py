@@ -14,7 +14,7 @@ import numpy as np
 
 def measure_keys(records: dict) -> list[str]:
     first = next(iter(records.values()))["measures"]
-    return sorted(k for k, v in first.items() if isinstance(v, (int, float)))
+    return sorted(k for k, v in first.items() if isinstance(v, int | float))
 
 
 def features(engine, keys: list[str], use_clip: bool) -> np.ndarray:
