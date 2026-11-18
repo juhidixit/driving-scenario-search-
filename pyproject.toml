@@ -19,7 +19,7 @@ dependencies = [
 
 [project.optional-dependencies]
 ml = ["torch>=2.2", "transformers>=4.40", "pillow>=10", "scikit-learn>=1.4"]
-dev = ["pytest>=8", "httpx>=0.27", "ruff==0.8.4", "lxml>=5", "scenariogeneration>=0.14", "scikit-learn>=1.4"]
+dev = ["pytest>=8", "pillow>=10", "httpx>=0.27", "ruff==0.8.4", "lxml>=5", "scenariogeneration>=0.14", "scikit-learn>=1.4"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
